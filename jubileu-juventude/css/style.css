@@ -367,7 +367,11 @@ body>header nav>a:last-child:hover {
 
 .hero img {
     width: min(100%, 28rem);
+    height: auto;
     margin-inline: auto;
+
+    object-fit: contain;
+    aspect-ratio: auto;
 
     border-radius: var(--radius-lg);
 
