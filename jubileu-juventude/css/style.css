@@ -450,13 +450,16 @@ body>header nav>a:last-child:hover {
    ========================= */
 
 .sport-card {
+    --sport-accent: var(--color-secondary-hover);
+    --sport-accent-soft: rgba(85, 152, 255, 0.2);
+    --sport-accent-border: rgba(85, 152, 255, 0.3);
+
     background:
-        linear-gradient(145deg,
-            rgba(47, 125, 244, 0.08),
-            transparent 50%),
+        linear-gradient(135deg, var(--sport-accent-soft), transparent 85%),
         var(--color-surface);
 
     border: 1px solid var(--color-border);
+    border-left: 4px solid var(--sport-accent);
     border-radius: var(--radius-lg);
 
     box-shadow: var(--shadow-sm);
@@ -467,10 +470,34 @@ body>header nav>a:last-child:hover {
         background-color var(--transition);
 }
 
+.sport-card--collective {
+    --sport-accent: var(--color-primary-hover);
+    --sport-accent-soft: rgba(255, 162, 77, 0.18);
+    --sport-accent-border: rgba(255, 162, 77, 0.3);
+}
+
+.sport-card--futsal {
+    --sport-accent: #ff6b6b;
+    --sport-accent-soft: rgba(255, 107, 107, 0.18);
+    --sport-accent-border: rgba(255, 107, 107, 0.3);
+}
+
+.sport-card--individual {
+    --sport-accent: #5bd6a2;
+    --sport-accent-soft: rgba(91, 214, 162, 0.18);
+    --sport-accent-border: rgba(91, 214, 162, 0.3);
+}
+
+.sport-card--gaming {
+    --sport-accent: #b79aff;
+    --sport-accent-soft: rgba(183, 154, 255, 0.2);
+    --sport-accent-border: rgba(183, 154, 255, 0.3);
+}
+
 .sport-card:hover {
     transform: translateY(-0.25rem);
 
-    border-color: rgba(255, 138, 31, 0.45);
+    border-color: var(--sport-accent-border);
 }
 
 .sport-card .card-body {
@@ -496,15 +523,15 @@ body>header nav>a:last-child:hover {
 
     margin-bottom: var(--space-xs);
 
-    background: var(--color-primary-soft);
-    border: 1px solid rgba(255, 138, 31, 0.25);
+    background: var(--sport-accent-soft);
+    border: 1px solid var(--sport-accent-border);
     border-radius: var(--radius-md);
 
     font-size: 1.6rem;
 }
 
 .sport-card small {
-    color: var(--color-primary);
+    color: var(--sport-accent);
 
     font-weight: 700;
     text-transform: uppercase;
@@ -534,10 +561,10 @@ body>header nav>a:last-child:hover {
 
     padding: 0.25rem 0.6rem;
 
-    background: var(--color-secondary-soft);
+    background: var(--sport-accent-soft);
     border-radius: 999rem;
 
-    color: var(--color-secondary-hover);
+    color: var(--sport-accent);
 
     font-size: var(--font-size-sm);
     font-weight: 700;
