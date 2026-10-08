@@ -1,28 +1,3 @@
-const revealElements = document.querySelectorAll(
-  ".sport-card, .facts, .community-card, .regulation > section"
-);
-
-revealElements.forEach((element) => {
-  element.classList.add("reveal");
-});
-
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-
-      entry.target.classList.add("reveal-visible");
-      observer.unobserve(entry.target);
-    });
-  },
-  {
-    threshold: 0.5,
-  }
-);
-
-revealElements.forEach((element) => observer.observe(element));
-
-
 const pageHeader = document.querySelector("body > header");
 
 const updateHeader = () => {
